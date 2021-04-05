@@ -1,8 +1,8 @@
 var express =require('express')
 var bodyParser = require('body-parser')
 var cors = require('cors')
-var config = require('./Database/config.js')
-var userRouter = require('./Database/routers/UserRouter.js')
+var config = require('./db/config.js')
+var userRouter = require('./db/routers/UserRouter.js')
 
 
 
