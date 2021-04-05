@@ -5,9 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthenticationComponent } from './components/authentication/authentication.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { FormUserProfileComponent } from './components/user-profile/form-user-profile/form-user-profile.component';
 
 @NgModule({
-  declarations: [AppComponent, AuthenticationComponent],
+  declarations: [AppComponent, AuthenticationComponent, UserProfileComponent, FormUserProfileComponent],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],

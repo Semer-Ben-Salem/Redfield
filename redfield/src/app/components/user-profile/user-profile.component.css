@@ -1,0 +1,25 @@
+.profile-container {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+/* delete and edit button */
+.delEd {
+  margin-top: 20px;
+  margin-left: 30px;
+}
+/* for user picture */
+.pic {
+  margin-top: 20px;
+  float: right;
+
+  margin-right: 40px;
+}
+
+/* for user informations */
+.info {
+  margin-top: 180px;
+  float: center;
+}
