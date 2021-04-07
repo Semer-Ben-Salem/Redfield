@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import axios from 'axios';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserProfileService {
-  constructor() {}
+  constructor(private htttp: HttpClient) {}
 }

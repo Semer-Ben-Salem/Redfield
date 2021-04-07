@@ -77,4 +77,13 @@ const deleteUser = (req, res) => {
   }
 };
 
-module.exports = { createUser, findUser, deleteUser };
+const getOneUser = async function (req, res) {
+  try {
+    const user = User.find({ email: req.body.email });
+    res.send(user);
+  } catch (err) {
+    res.send(err);
+  }
+};
+
+module.exports = { createUser, findUser, deleteUser, getOneUser };
