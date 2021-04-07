@@ -89,15 +89,23 @@ const getOneUser = async function (req, res) {
 const updateUser = async function (req, res) {
   const user = { fName: req.body.fName, lName: req.body.lName, password: req.body.password, phoneNumber: req.body.phoneNumber };
   console.log(user);
-  query = req.body.id;
+  query = req.body.email;
   console.log(query);
-  await User.findOneAndUpdate(query, user, (err, result) => {
+  bcrypt.hash(req.body.password, 10, (err, hash) => {
     if (err) {
       throw err;
     } else {
-      console.log(result);
+      user.password = hash;
+      console.log(hash);
+      User.findOneAndUpdate(query, user, (err, result) => {
+        if (err) {
+          throw err;
+        } else {
+          console.log(result);
+        }
+      });
+      res.send(user);
     }
   });
-  res.send(user);
 };
 module.exports = { createUser, findUser, deleteUser, getOneUser, updateUser };
