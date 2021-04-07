@@ -78,13 +78,26 @@ const deleteUser = (req, res) => {
 };
 
 const getOneUser = async function (req, res) {
-  try {
-    const user = User.find({ email: req.body.email });
-    res.send(user);
-  } catch (err) {
-    res.send(err);
-  }
+  User.findOne({ email: req.body.email }, function (err, result) {
+    if (err) {
+      throw err;
+    } else {
+      console.log(result);
+      const user = { fName: result.fName, lName: result.lName, email: result.email, phoneNumber: result.phoneNumber };
+      res.send(user);
+    }
+  });
 };
+
+// const getOneUser = async function (req, res) {
+//   try {
+//     const user = User.find({ email: req.body.email });
+//     console.log(user);
+//     res.send(user);
+//   } catch (err) {
+//     res.send(err);
+//   }
+// };
 
 const updateUser = async function (req, res) {
   const user = { fName: req.body.fName, lName: req.body.lName, password: req.body.password, phoneNumber: req.body.phoneNumber };
